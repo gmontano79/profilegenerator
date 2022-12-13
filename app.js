@@ -79,13 +79,6 @@ function addMember() {
     });
 }
 
-// function renderHtml(memberArray) {
-//     startHtml();
-//     for (const member of memberArray) {
-//         addHtml(member);
-//     }
-//     finishHtml();
-// }
 
 function startHtml() {
   const html = `<!DOCTYPE html>
@@ -94,11 +87,11 @@ function startHtml() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Team Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <title>Employees Profile</title>
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark mb-5">
+        <nav class="navbar navbar-dark bg-info mb-5">
             <span class="navbar-brand mb-0 h1 w-100 text-center">Employees Profile</span>
         </nav>
         <div class="container">
@@ -121,7 +114,7 @@ function addHtml(member) {
     if (role === "Engineer") {
       const gitHub = member.getGithub();
       data = `<div class="col-6">
-            <div class="card mx-auto mb-3" style="width: 18rem">
+            <div class="card mx-auto mb-3" style="width: 20rem">
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
@@ -133,7 +126,7 @@ function addHtml(member) {
     } else if (role === "Intern") {
       const school = member.getSchool();
       data = `<div class="col-6">
-            <div class="card mx-auto mb-3" style="width: 18rem">
+            <div class="card mx-auto mb-3" style="width: 20rem">
             <h5 class="card-header">${name}<br /><br />Intern</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
@@ -145,7 +138,7 @@ function addHtml(member) {
     } else {
       const officePhone = member.getOfficeNumber();
       data = `<div class="col-6">
-            <div class="card mx-auto mb-3" style="width: 18rem">
+            <div class="card mx-auto mb-3" style="width: 20rem">
             <h5 class="card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
@@ -163,12 +156,6 @@ function addHtml(member) {
       return resolve();
     });
   });
-
-
-
-
-
-
 }
 
 function finishHtml() {
@@ -186,10 +173,4 @@ function finishHtml() {
   console.log("end");
 }
 
-// addMember();
-// startHtml();
-// addHtml("hi")
-// .then(function() {
-// finishHtml();
-// });
 initApp();
